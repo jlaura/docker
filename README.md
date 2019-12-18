@@ -5,7 +5,7 @@ to specifiy the Dockerfile. Ex (from root of repo):
 `docker build -t centos -f centos/Dockerfile .`
 
 
-The images also include a convenience entrypoint that runs all scripts under
+Most images also include a convenience entrypoint that runs all scripts under
 `/docker-entrypoint.d` each time the container starts up. This can be useful
 for script injection into an existing image.
 
