@@ -1,6 +1,6 @@
 # vim: ft=dockerfile
 
-FROM alpine:latest
+FROM alpine:3
 
 RUN apk add --update ca-certificates bash && rm -rf /var/cache/apk/*
 RUN mkdir -p /usr/local/share/ca-certificates/doi

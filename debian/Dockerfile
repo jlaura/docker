@@ -1,6 +1,6 @@
 # vim: ft=dockerfile
 
-FROM debian:stable-slim
+FROM debian:10-slim
 
 RUN apt-get update &&                       \
     apt-get install -y ca-certificates &&   \

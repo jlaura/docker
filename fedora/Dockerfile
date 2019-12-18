@@ -1,6 +1,6 @@
 # vim: ft=dockerfile
 
-FROM fedora:latest
+FROM fedora:28
 
 COPY DOIRootCA2.crt /etc/pki/ca-trust/source/anchors/ 
 RUN update-ca-trust enable && update-ca-trust extract
