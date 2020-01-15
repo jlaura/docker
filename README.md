@@ -17,6 +17,7 @@ The following images are included
 - [usgsastro/debian](https://hub.docker.com/repository/docker/usgsastro/debian)
 - [usgsastro/fedora](https://hub.docker.com/repository/docker/usgsastro/fedora)
 - [usgsastro/kube](https://hub.docker.com/repository/docker/usgsastro/kube)
+- [usgsastro/dind](https://hub.docker.com/repository/docker/usgsastro/dind)
 - [usgsastro/miniconda3](https://hub.docker.com/repository/docker/usgsastro/miniconda3)
 - [usgsastro/postgis](https://hub.docker.com/repository/docker/usgsastro/postgis)
 - [usgsastro/postgres](https://hub.docker.com/repository/docker/usgsastro/postgres)
