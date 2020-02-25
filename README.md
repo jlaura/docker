@@ -22,3 +22,4 @@ The following images are included
 - [usgsastro/postgis](https://hub.docker.com/repository/docker/usgsastro/postgis)
 - [usgsastro/postgres](https://hub.docker.com/repository/docker/usgsastro/postgres)
 - [usgsastro/ubuntu](https://hub.docker.com/repository/docker/usgsastro/ubuntu)
+- [usgsastro/jenkins-agent](https://hub.docker.com/repository/docker/usgsastro/jenkins-agent)
