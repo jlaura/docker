@@ -2,24 +2,21 @@
 # please check the buildDocker.sh script... or just configure and run the script!
 # This container creates an instance of GeoServer 2.15.1
 
-FROM usgsastro/alpine
-USER root
+FROM usgsastro/openjdk8
 
-# Installs JDK8
-RUN apk update
-RUN apk add openjdk8
-RUN rm -rf /var/cache/apk/*
+ARG geoserverVersion=2.16.2
+ENV GEOSERVER_HOME /usr/share/geoserver
+ENV GEOSERVER_DATA_DIR /usr/share/geoserver/data_dir
+VOLUME $GEOSERVER_DATA_DIR
 
-# Creates directories for geoserver and it's downloads
-RUN mkdir /usr/share/geoserver
-RUN mkdir ~/geoserver_download
+RUN apt-get update && apt-get install unzip wget -y && rm -rf /var/lib/apt/lists/*
 
-RUN wget -P ~/geoserver_download https://sourceforge.net/projects/geoserver/files/GeoServer/2.15.1/geoserver-2.15.1-bin.zip
-RUN ls -l ~/geoserver_download
-RUN unzip ~/geoserver_download/geoserver-2.15.1-bin.zip -d /usr/share/geoserver
-
-# Set environment variable to the correct home
-ENV GEOSERVER_HOME="/usr/share/geoserver/geoserver-2.15.1/"
+RUN wget -qO /tmp/geoserver-${geoserverVersion}-bin.zip                                                                         \
+        https://sourceforge.net/projects/geoserver/files/GeoServer/${geoserverVersion}/geoserver-${geoserverVersion}-bin.zip    \
+    && unzip /tmp/geoserver-${geoserverVersion}-bin.zip -d /usr/share                                                           \
+    && ln -s /usr/share/geoserver-${geoserverVersion} $GEOSERVER_HOME                                                           \
+    && rm /tmp/geoserver-${geoserverVersion}-bin.zip
 
 # Runs the geoserver startup.sh
-ENTRYPOINT ["/usr/share/geoserver/geoserver-2.15.1/bin/startup.sh"]
+WORKDIR $GEOSERVER_HOME
+ENTRYPOINT ["sh", "-c", "$GEOSERVER_HOME/bin/startup.sh"]
