@@ -21,6 +21,7 @@ The following images are included
 - [usgsastro/kube](https://hub.docker.com/repository/docker/usgsastro/kube)
 - [usgsastro/miniconda3](https://hub.docker.com/repository/docker/usgsastro/miniconda3)
 - [usgsastro/openjdk8](https://hub.docker.com/repository/docker/usgsastro/openjdk8)
+- [usgsastro/osm-tile-server](https://hub.docker.com/repository/docker/usgsastro/osm-tile-server)
 - [usgsastro/pgadmin4](https://hub.docker.com/repository/docker/usgsastro/pgadmin4)
 - [usgsastro/postgis](https://hub.docker.com/repository/docker/usgsastro/postgis)
 - [usgsastro/postgres](https://hub.docker.com/repository/docker/usgsastro/postgres)
