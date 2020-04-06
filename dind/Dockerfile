@@ -1,6 +1,5 @@
 FROM docker:18-dind
 
-ENV COMPOSE_VERSION "1.25.4"
 ENV PIP_CERT /etc/ssl/certs/ca-certificates.crt
 
 COPY DOIRootCA2.crt /usr/local/share/ca-certificates/
