@@ -19,6 +19,7 @@ The following images are included
 - [usgsastro/fedora](https://hub.docker.com/repository/docker/usgsastro/fedora)
 - [usgsastro/jenkins-agent](https://hub.docker.com/repository/docker/usgsastro/jenkins-agent)
 - [usgsastro/kube](https://hub.docker.com/repository/docker/usgsastro/kube)
+- [usgsastro/maven](https://hub.docker.com/repository/docker/usgsastro/maven)
 - [usgsastro/miniconda3](https://hub.docker.com/repository/docker/usgsastro/miniconda3)
 - [usgsastro/openjdk8](https://hub.docker.com/repository/docker/usgsastro/openjdk8)
 - [usgsastro/osm-tile-server](https://hub.docker.com/repository/docker/usgsastro/osm-tile-server)
