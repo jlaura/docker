@@ -26,4 +26,5 @@ The following images are included
 - [usgsastro/pgadmin4](https://hub.docker.com/repository/docker/usgsastro/pgadmin4)
 - [usgsastro/postgis](https://hub.docker.com/repository/docker/usgsastro/postgis)
 - [usgsastro/postgres](https://hub.docker.com/repository/docker/usgsastro/postgres)
+- [usgsastro/tomcat](https://hub.docker.com/repository/docker/usgsastro/tomcat)
 - [usgsastro/ubuntu](https://hub.docker.com/repository/docker/usgsastro/ubuntu)
