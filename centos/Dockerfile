@@ -4,6 +4,7 @@ FROM centos:7
 
 RUN yum install -y ca-certificates && yum clean all
 COPY DOIRootCA2.crt /etc/pki/ca-trust/source/anchors/ 
+COPY DigiCertCA.crt /etc/pki/ca-trust/source/anchors/
 RUN update-ca-trust enable && update-ca-trust extract
 
 RUN mkdir -p /docker-entrypoint.d

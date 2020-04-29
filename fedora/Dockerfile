@@ -3,6 +3,7 @@
 FROM fedora:28
 
 COPY DOIRootCA2.crt /etc/pki/ca-trust/source/anchors/ 
+COPY DigiCertCA.crt /etc/pki/ca-trust/source/anchors/
 RUN update-ca-trust enable && update-ca-trust extract
 
 RUN mkdir -p /docker-entrypoint.d
