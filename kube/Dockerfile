@@ -1,7 +1,7 @@
 FROM usgsastro/debian:latest
 
 SHELL ["/bin/bash", "-c"]
-ENV HELM_VERSION 3.0.2
+ENV HELM_VERSION 3.2.0
 ENV RANCHER_CLI_VERSION 2.3.2
 
 RUN apt-get update &&                                   \
