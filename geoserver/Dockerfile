@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install unzip wget -y
 RUN wget -qO /tmp/geoserver.zip \
      https://sourceforge.net/projects/geoserver/files/GeoServer/${geoserverVersion}/geoserver-${geoserverVersion}-bin.zip 
 
-RUN unzip -d /tmp/ /tmp/geoserver.zip
+RUN unzip -d /tmp/geoserver/ /tmp/geoserver.zip
 
 # Stage 2
 FROM usgsastro/openjdk8:latest
@@ -21,7 +21,7 @@ ENV GEOSERVER_DATA_DIR /usr/share/geoserver/data_dir
 RUN apt-get update && apt-get install -y xorg \
     && rm -rf /var/lib/apt/lists/*
 
-COPY --from=0 /tmp/ /usr/share/geoserver-${geoserverVersion}
+COPY --from=0 /tmp/geoserver/ /usr/share/geoserver-${geoserverVersion}
 
 RUN ln -s /usr/share/geoserver-${geoserverVersion} $GEOSERVER_HOME
 
