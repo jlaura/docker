@@ -29,6 +29,8 @@ RUN ln -s /usr/share/geoserver-${geoserverVersion} $GEOSERVER_HOME && \
     chown www-data:www-data /tmp/geoserver
 
 VOLUME $GEOSERVER_DATA_DIR
+VOLUME $GEOWEBCACHE_CACHE_DIR
+
 WORKDIR $GEOSERVER_HOME
 ENTRYPOINT ["sh", "-c", "$GEOSERVER_HOME/bin/startup.sh"]
 
