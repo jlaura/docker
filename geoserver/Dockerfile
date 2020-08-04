@@ -16,14 +16,17 @@ FROM usgsastro/openjdk8:latest
 ARG geoserverVersion=2.17.2
 
 ENV GEOSERVER_HOME /usr/share/geoserver
-ENV GEOSERVER_DATA_DIR /usr/share/geoserver/data_dir
+ENV GEOSERVER_DATA_DIR /var/lib/geoservera
+ENV GEOWEBCACHE_CACHE_DIR /tmp/geoserver
 
 RUN apt-get update && apt-get install -y xorg \
     && rm -rf /var/lib/apt/lists/*
 
 COPY --from=0 /tmp/geoserver/ /usr/share/geoserver-${geoserverVersion}
 
-RUN ln -s /usr/share/geoserver-${geoserverVersion} $GEOSERVER_HOME
+RUN ln -s /usr/share/geoserver-${geoserverVersion} $GEOSERVER_HOME && \
+    mkdir /tmp/geoserver && \
+    chown www-data:www-data /tmp/geoserver
 
 VOLUME $GEOSERVER_DATA_DIR
 WORKDIR $GEOSERVER_HOME
