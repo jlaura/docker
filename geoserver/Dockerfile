@@ -16,7 +16,7 @@ FROM usgsastro/openjdk8:latest
 ARG geoserverVersion=2.17.2
 
 ENV GEOSERVER_HOME /usr/share/geoserver
-ENV GEOSERVER_DATA_DIR /var/lib/geoservera
+ENV GEOSERVER_DATA_DIR /var/lib/geoserver
 ENV GEOWEBCACHE_CACHE_DIR /tmp/geoserver
 
 RUN apt-get update && apt-get install -y xorg \
