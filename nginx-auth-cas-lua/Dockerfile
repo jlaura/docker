@@ -1,14 +1,15 @@
 # vim: ft=dockerfile:
 FROM openresty/openresty:bionic
 
-RUN luarocks install lua-resty-http
-
 RUN apt-get update && \
     apt install libnginx-mod-http-lua -y && \
     rm -rf /var/lib/apt/lists/*
 
 COPY DOIRootCA2.crt /usr/local/share/ca-certificates/
+COPY DigiCertCA.crt /usr/local/share/ca-certificates/
 RUN update-ca-certificates
+
+RUN luarocks install lua-resty-http
 
 ADD https://raw.githubusercontent.com/prigaux/nginx-auth-cas-lua/master/src/global_cas_conf.lua \
     /usr/local/openresty/lualib/
@@ -18,5 +19,5 @@ ADD https://raw.githubusercontent.com/prigaux/nginx-auth-cas-lua/master/src/cas.
     /usr/local/openresty/lualib/
 RUN chmod 644 /usr/local/openresty/lualib/cas.lua
 
-COPY nginx-auth-cas-lua/nginx.conf /etc/nginx/
+COPY nginx-auth-cas-lua/nginx.conf /usr/local/openresty/nginx/conf/
 
