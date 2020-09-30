@@ -2,7 +2,7 @@
 
 FROM usgsastro/debian:latest
 
-RUN apt-get update && apt-get install curl git -y
+RUN apt-get update && apt-get install curl git ssh -y
 
 RUN curl -s \
         -o /tmp/git-lfs.sh \
