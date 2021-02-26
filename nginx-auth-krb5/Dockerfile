@@ -51,6 +51,9 @@ FROM nginx:stable
 RUN apt-get update && \
     apt-get install -y \
         make \
+        krb5-user \
+        libpam-krb5 \
+        libpam-ccreds \
     && \
     rm -rf /var/lib/apt/lists/* /var/cache/apt/*
 
