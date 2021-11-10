@@ -12,6 +12,7 @@ COPY DOIRootCA2.crt /usr/local/share/ca-certificates/
 
 RUN update-ca-certificates &&                                               \
     git config --system http.sslCAInfo /etc/ssl/certs/ca-certificates.crt && \
+    git config --system http.connecttimeout 3600 && \
     git config --system http.lowSpeedLimit 1000 && \
     git config --system http.lowSpeedTime 3600
 
