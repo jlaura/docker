@@ -2,7 +2,7 @@
 
 FROM continuumio/miniconda3:4.7.12
 
-ENV PIP_CERT=/etc/ssl/certs/ca-certficates.crt
+ENV PIP_CERT=/etc/ssl/certs/ca-certificates.crt
 
 COPY DOIRootCA2.crt /usr/local/share/ca-certificates/ 
 COPY DigiCertCA.crt /usr/local/share/ca-certificates/ 
