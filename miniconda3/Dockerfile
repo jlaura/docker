@@ -1,6 +1,6 @@
 # vim: ft=dockerfile
 
-FROM continuumio/miniconda3:4.7.12
+FROM continuumio/miniconda3:4.10.3
 
 ENV PIP_CERT=/etc/ssl/certs/ca-certificates.crt
 
