@@ -1,9 +1,9 @@
-FROM usgsastro/postgres:latest
+FROM usgsastro/postgres:13
 
 RUN apt-get update && apt-get install -y    \
         postgis                             \
-        postgresql-14-postgis-3             \
-        postgresql-14-postgis-3-scripts     \
+        postgresql-13-postgis-3             \
+        postgresql-13-postgis-3-scripts     \
     && rm -rf /var/cache/apt/* &&           \
     rm -rf /var/lib/apt/lists/*
 
